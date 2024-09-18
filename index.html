@@ -1,41 +1,93 @@
+# Update HTML & CSS for a simpler structure without sidebar or categories.
+html_code = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Listings</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Game Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #4CAF50;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .game-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .game-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+        .game-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .game-rating {
+            color: #FFA500;
+            font-size: 1rem;
+        }
+        .placeholder {
+            background-color: #ddd;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#">Apps</a>
-            <a href="#">Articles</a>
-        </nav>
-    </header>
 
-    <section id="arcade-games">
-        <h2>Arcade Games</h2>
-        <div class="game">
-            <img src="placeholder.jpg" alt="Game Image">
-            <p>Game Title</p>
-            <p>Rating: 10.0</p>
+    <div class="navbar">
+        <h1>Game Store</h1>
+    </div>
+
+    <div class="game-container">
+        <!-- Placeholder for games -->
+        <div class="game-card">
+            <div class="placeholder"></div>
+            <h2 class="game-title">Game Title</h2>
+            <div class="game-rating">Rating: ★★★★☆</div>
         </div>
-    </section>
-
-    <section id="casual-games">
-        <h2>Casual Games</h2>
-        <div class="game">
-            <img src="placeholder.jpg" alt="Game Image">
-            <p>Game Title</p>
-            <p>Rating: 9.2</p>
+        
+        <div class="game-card">
+            <div class="placeholder"></div>
+            <h2 class="game-title">Game Title</h2>
+            <div class="game-rating">Rating: ★★★★☆</div>
         </div>
-    </section>
+        
+        <div class="game-card">
+            <div class="placeholder"></div>
+            <h2 class="game-title">Game Title</h2>
+            <div class="game-rating">Rating: ★★★★☆</div>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Your Website Name</p>
-    </footer>
 </body>
 </html>
+"""
+
+# Saving the file so user can download it and upload it to their GitHub Pages repository
+with open("/mnt/data/game_store_placeholder.html", "w") as file:
+    file.write(html_code)
+
+"/mnt/data/game_store_placeholder.html"  # File path for download
+
